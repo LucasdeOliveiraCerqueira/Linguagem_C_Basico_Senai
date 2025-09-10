@@ -1,0 +1,19 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+int main(){
+	int num[10], i;
+	
+	for(i = 0; i < 10; i++){
+		printf("Escreva um numero: ");
+		scanf("%d", &num[i]);
+	}
+	
+	system("cls");
+	 
+	printf("os numeros sao: \n");
+	 
+	for(i = 0; i < 10; i++){
+			printf("%d\n", num[i]);
+	}
+}
