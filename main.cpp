@@ -15,34 +15,36 @@ int cadrastro(){
 	if (code >= 20){
 		printf("A quantidade de produtos cadrastados atingiu o limite! ");
 	} else {
-		printf("Qual é o nome do produto? ");
-		scanf("%s", produtos[code].nome);
+		printf("Qual e o nome do produto? ");
+		scanf("%s", &produtos[code].nome);
 		
-		printf("Qual é o valor do produto? ");
-		scanf("%f", produtos[code].preco);
+		printf("Qual e o valor do produto? ");
+		scanf("%f", &produtos[code].preco);
 		
-		printf("Qual é a quantidade do produto? ");
-		scanf("%d", produtos[code].quantidade);
+		printf("Qual e a quantidade do produto? ");
+		scanf("%d", &produtos[code].quantidade);
 		
-		printf("Qual é o codigo do produto? ");
-		scanf("%d", produtos[code].codigo);
+		printf("Qual e o codigo do produto? ");
+		scanf("%d", &produtos[code].codigo);
 		
 		code++;
-	}
+	}	
+	system("cls");
 }
 
 void busca(){
 	int id;
 	
-	printf("Qual é o codigo do produto? ");
+	printf("Qual e o codigo do produto? ");
 	scanf("%d", &id);
 	
 	for(int i = 0; i < code; i++){
 		if (produtos[i].codigo == id){
-			printf("Nome do produto: %s \n Valor do produto: %f \nQuantidade do produto: %d", produtos[i].nome, produtos[i].preco, produtos[i].quantidade);
+			printf("Nome do produto: %s \nValor do produto: %.2f \nQuantidade do produto: %d\n\n", produtos[i].nome, produtos[i].preco, produtos[i].quantidade);
+			return;
 		}
 	}
-	printf("Codigo invalido!");
+	printf("Codigo invalido!\n\n");
 }
 
 int direcao(int menu){
@@ -57,7 +59,7 @@ int direcao(int menu){
 		case 3:
 			break;
 		default:
-			printf("Operacao invalida!");
+			printf("Operacao invalida!\n\n");
 	}
 }
 
